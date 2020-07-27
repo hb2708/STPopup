@@ -139,6 +139,11 @@ typedef NS_ENUM(NSUInteger, STPopupTransitionStyle) {
 @property (nonatomic, assign, readonly) BOOL presented;
 
 /**
+ Remove the keyboard observers
+ */
+- (void)destroyKeyboardObservers;
+
+/**
  Init the popup with root view controller.
  */
 - (instancetype)initWithRootViewController:(UIViewController *)rootViewController;

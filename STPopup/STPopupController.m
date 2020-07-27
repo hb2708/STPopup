@@ -268,6 +268,9 @@ static NSMutableSet *_retainedPopupControllers;
 
 - (void)destroyKeyboardObservers
 {
+    if (!_observing) {
+        return;
+    }
     // Remove Keyboard Observe 
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillChangeFrameNotification object:nil];

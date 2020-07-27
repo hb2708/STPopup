@@ -266,6 +266,14 @@ static NSMutableSet *_retainedPopupControllers;
     }
 }
 
+- (void)destroyKeyboardObservers
+{
+    // Remove Keyboard Observe 
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillChangeFrameNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+}
+
 #pragma mark - STPopupController present & dismiss & push & pop
 
 - (void)presentInViewController:(UIViewController *)viewController
